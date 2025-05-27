@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Modern 6-Grid Layout</title>
+  
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-light: #3b82f6;
+      --bg: #f9fafb;
+      --card-bg: #ffffff;
+      --text: #111827;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+    }
+	 .centered-box {
+      width: 50%;
+      margin: 50px auto; /* auto horizontally centers it */
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--card-bg);
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .logo {
+      height: 40px;
+    }
+
+    .login-button {
+      padding: 0.5rem 1.2rem;
+      font-size: 1rem;
+      background-color: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .login-button:hover {
+      background-color: var(--primary-light);
+    }
+
+    /* Grid layout */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+
+    .grid-item {
+      background-color: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .grid-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+ <div class="centered-box">
+  <!-- Header -->
+  <header>
+    <img src="https://via.placeholder.com/140x40?text=LOGO" alt="Logo" class="logo" />
+    <button class="login-button">Login</button>
+  </header>
+
+  <!-- 6-Column Grid -->
+  <main class="grid-container">
+    <div class="grid-item"><a href="app.py">Card 1</a></div>
+    <div class="grid-item">Card 2</div>
+    <div class="grid-item">Card 3</div>
+    <div class="grid-item">Card 4</div>
+    <div class="grid-item">Card 5</div>
+    <div class="grid-item">Card 6</div>
+  </main>
+</div>
+</body>
+
+</html>
