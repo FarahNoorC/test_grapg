@@ -1,7 +1,5 @@
-flask
 streamlit
-matplotlib
 pandas
-matplotlib.pyplot
+matplotlib
 seaborn
-io
+openpyxl  # Required for reading Excel files (.xlsx)
