@@ -1,3 +1,7 @@
 flask
 streamlit
 matplitlib
+pandas
+matplotlib.pyplot
+seaborn
+io
